@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane prefHeight="601.0" prefWidth="800.0" style="-fx-background-color: #2e3440;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.climbsafe.javafx.fxml.pages.InitiateAssignmentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="266.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="266.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="266.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#initiateAssignments" prefHeight="30.0" prefWidth="362.0" style="-fx-background-color: #5e81ac; -fx-background-radius: 20px;" text="Initiate All Assignments" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets left="10.0" right="10.0" />
+         </opaqueInsets>
+      </Button>
+      <ChoiceBox fx:id="namesOfParticipants" prefHeight="32.0" prefWidth="297.0" style="-fx-background-color: #4c566a; -fx-background-radius: 25px;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="75.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </ChoiceBox>
+      <GridPane prefHeight="242.0" prefWidth="638.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="5">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Member Name:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="memberName" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Member Email:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="memberEmail" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Guide Name:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="guideName" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Guide Email:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="guideEmail" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Start Week:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="startWeek" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="End Week:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="endWeek" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Hotel Name:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="hotelName" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Auth Code:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="authCode" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Guide Cost:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="8">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="guideCost" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Equipment Cost:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="9">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="equipmentCost" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Refund:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="10">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="refund" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 20px 0 0 20px;" text="Status:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="11">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="status" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #4c566a; -fx-background-radius: 0 20px 20px 0;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="11">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="25.0" left="20.0" right="40.0" top="10.0" />
+         </GridPane.margin>
+      </GridPane>
+      <Label prefHeight="17.0" prefWidth="600.0" text="View Assignments" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>

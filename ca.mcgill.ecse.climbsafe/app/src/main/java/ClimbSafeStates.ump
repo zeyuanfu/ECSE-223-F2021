@@ -1,0 +1,160 @@
+// @author Michelle Lee, Magnus Gao, Elie Abdo, Yazdan Zinati, Enzo Calcagno, Ze Yuan Fu
+class Assignment {
+    AssignmentStatus {
+
+      Assigned {
+        cancelTrip() [!isBanned()] / {
+          doCancelTrip();
+        } -> Cancelled;
+        confirmPayment(String authCode) [!isBanned()] / {
+          doConfirmPayment(authCode);
+        } -> Paid;
+        startTrip(int week) [hasMatchingStartWeek(week)] -> Banned;
+        finishTrip() / {
+          rejectFinishTrip();
+        } -> Assigned;
+      }
+
+      Banned {
+        startTrip() / {
+             rejectStartTrip();
+        } -> Banned;
+        finishTrip() / {
+          rejectFinishTrip();
+        } -> Banned;
+        confirmPayment(String authCode) / {
+          rejectPayment();
+        } -> Banned;
+        cancelTrip() / {
+          rejectCancelTrip();
+        } -> Banned;
+      }
+
+      Cancelled {
+        startTrip() / {
+          rejectStartTrip();
+        } -> Cancelled;
+        confirmPayment(String authCode) / {
+          rejectPayment();
+        } -> Cancelled;
+        finishTrip() / {
+          rejectFinishTrip();
+        } -> Cancelled;
+      }
+
+      Paid {
+        cancelTrip() / {
+          doCancelTrip();
+        } -> Cancelled;
+        startTrip(int week) [hasMatchingStartWeek(week)] -> Started;
+        confirmPayment(String authCode) / {
+          rejectPayment();
+        } -> Paid;
+        finishTrip() / {
+          rejectFinishTrip();
+        } -> Paid;
+      }
+
+      Started {
+        finishTrip() -> Finished;
+        cancelTrip() / {
+          doCancelTrip();
+        } -> Cancelled;
+        confirmPayment(String authCode) / {
+          rejectPayment();
+        } -> Started;
+      }
+
+      Finished {
+        confirmPayment(String authCode) / {
+          rejectPayment();
+        } -> Finished;
+        startTrip() / {
+          rejectStartTrip();
+        } -> Finished;
+        cancelTrip() / {
+          rejectCancelTrip();
+        } -> Finished;
+      }
+  }
+
+
+  private void doConfirmPayment(String authCode){
+      this.setAuthCode(authCode); // this is a domain method we added
+  }
+
+  private void doCancelTrip(){
+      if (getAssignmentStatusFullName().equals("Assigned")) {
+         this.setDiscount(0); // 100% refund
+      } else if (getAssignmentStatusFullName().equals("Paid")) {
+         this.setDiscount(50); // 50% refund
+      } else if (getAssignmentStatusFullName().equals("Started")) {
+         this.setDiscount(10);
+      }
+  }
+
+
+  private void rejectPayment() {
+    if (getAssignmentStatusFullName().equals("Paid")) {
+      throw new RuntimeException("Trip has already been paid for");
+    }
+    if (getAssignmentStatusFullName().equals("Started")) {
+      throw new RuntimeException("Trip has already been paid for");
+    }
+    if (getAssignmentStatusFullName().equals("Banned")) {
+      throw new RuntimeException("Cannot pay for the trip due to a ban");
+    }
+    if (getAssignmentStatusFullName().equals("Finished")) {
+      throw new RuntimeException("Cannot pay for a trip which has finished");
+    }
+    if (getAssignmentStatusFullName().equals("Cancelled")) {
+      throw new RuntimeException("Cannot pay for a trip which has been cancelled");
+    }
+
+  }
+
+  private void rejectStartTrip() {
+    if (getAssignmentStatusFullName().equals("Banned")) {
+      throw new RuntimeException("Cannot start the trip due to a ban");
+    }
+     if (getAssignmentStatusFullName().equals("Cancelled")) {
+      throw new RuntimeException("Cannot start a trip which has been cancelled");
+    }
+     if (getAssignmentStatusFullName().equals( "Finished")) {
+      throw new RuntimeException("Cannot start a trip which has finished");
+    }
+
+  }
+
+  private void rejectFinishTrip() {
+    if (getAssignmentStatusFullName().equals("Banned")) {
+      throw new RuntimeException("Cannot finish the trip due to a ban");
+    }
+     if (getAssignmentStatusFullName().equals("Assigned")) {
+      throw new RuntimeException("Cannot finish a trip which has not started");
+    }
+     if (getAssignmentStatusFullName().equals("Paid")) {
+      throw new RuntimeException("Cannot finish a trip which has not started");
+    }
+    if (getAssignmentStatusFullName().equals("Cancelled")) {
+      throw new RuntimeException("Cannot finish a trip which has been cancelled");
+    }
+  }
+
+  private void rejectCancelTrip() {
+    if (getAssignmentStatusFullName().equals("Banned")) {
+      throw new RuntimeException("Cannot cancel the trip due to a ban");
+    }
+    if (getAssignmentStatusFullName().equals("Finished")) {
+      throw new RuntimeException("Cannot cancel a trip which has finished");
+    }
+  }
+  private boolean isBanned() {
+    return getAssignmentStatusFullName().equals("Banned");
+  }
+  
+  private boolean hasMatchingStartWeek(int week) {
+    Member member = this.getMember();
+    return (week == member.getAssignment().getStartWeek());
+  }
+}

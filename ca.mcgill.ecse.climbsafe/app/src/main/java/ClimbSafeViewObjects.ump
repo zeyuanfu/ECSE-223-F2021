@@ -1,0 +1,6 @@
+namespace ca.mcgill.ecse.climbsafe.javafx.fxml.pages;
+
+class EquipmentViewObject {
+  name;
+  quantity;
+}
